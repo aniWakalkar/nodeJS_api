@@ -11,6 +11,10 @@ require("./createDatabase");
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
 
+app.get("/", (req, res) => {
+  res.send("Welcome to JavaTpoint!");
+});
+
 app.get("/api/orders", (req, res) => {
   var { limit = 10, offset = 0 } = req.query;
 
